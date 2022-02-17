@@ -48,8 +48,11 @@ compteur associé à chaque élément pour garder une trace du nombre de fois qu
 est supérieur à zéro. C-Set est convergent, laisse la causalité au sous-jacent réseau, mais malheureusement, quand une suppression suivie d’un insert sont exécutés
 l’intention n’est pas préservée. La figure 4 présente un exemple de violation de l’intention dans l’ensemble C. À partir d’un point où un élément x a 3 dans son compteur et donc, pas un membre de l’ensemble. Si deux nœuds décident simultanément pour insérer x et le supprimer immédiatement, ils convergeront vers un état où x est un membre de l’ensemble, ce qui n’était l’intention d’aucun d’eux.
 \subsection{SU-Set}
+SU-Set a été développée pour servir comme une base pour les entrepôts RDF qui 
+pourrait s’implémenter dans un moteur d’inférence RDF.
 \subsection{B-SET \cite{B-SET}} repose sur l’entreposage de « pierres tombales », c.-à-d. les éléments supprimés sont simplement cachés à l’utilisateur via l’opération de recherche. L’utilisation de pierres tombales n’est pas appropriée pour les grands ensembles comme ceux que nous pouvons trouver dans le réseau de données, car leur complexité spatiale est élevée.
 \subsection{srCE}
+Une importante propriété du modèle srCE est que ses opérations ne s’exécutent pas directement sur l’ensemble final mais elles doivent d’abord s’exécuter sur l’un des multi-sets supplémentaires, selon le type de l’opération.
 \subsection{LD-SET}
 \section{Etude comparative entre ces algorithmes}
 \section*{Conclusion}
