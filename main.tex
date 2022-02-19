@@ -33,18 +33,30 @@ documents, vers un Web dont le contenu serait compréhensible par les machines. 
 Le Web sémantique n’est pas un Web séparé mais une extension du Web actuel, dans lequel l’information est bien définie, permettant ainsi aux ordinateurs et aux personnes de travailler en coopération.
 Le Web sémantique permettra aux machines de comprendre les documents et les données sémantiques, et non la parole humaine et les écrits.\cite{SEMANTCWEB}
 \section{RDF}
-RDF est un acronyme de Resource Description Framework. RDF est une norme W3C des technologies Web sémantiques et la base de l’architecture standardisée des technologies Web Sémantique. Le RDF est un langage simple pour exprimer des modèles de données sous forme d'objets « ressources » et de leurs relations.
+RDF est un acronyme de Resource Description Framework. RDF est une norme W3C des technologies Web sémantiques et la base de l’architecture standardisée des technologies Web Sémantique. Le RDF est un langage simple pour exprimer des modèles de données sous forme d'objets « ressources » et de leurs relations. Il sera utilisé pour annoter des documents écrits dans des langages non structurés, ou comme une interface pour des documents écrits dans des langages ayant une sémantique équivalente (des bases de données, par exemple).
+Un document RDF est un ensemble de triplets de la forme <sujet, prédicat, objet>. Les éléments de ces triplets peuvent être des URIs (Universal Resource Identifiers), des littéraux ou des variables. Cet ensemble de triplets peut être représenté de façon naturelle par un graphe (plus précisément un multi-graphe orienté étiqueté), où les éléments apparaissant comme sujet ou objet sont les sommets, et chaque triplet est représenté par un arc dont l’origine est son sujet et la destination son objet . [Berners-Lee et al., 1998]
 
 \section{LINKED DATA (DONNÉES LIÉES)}
 Le Web est de plus en plus considéré comme un espace d’information global constitué non seulement de documents liés, mais aussi de données liées. Plus qu’une simple vision, le Web of Data qui en résulte est né de la maturation de la pile de technologies du Web sémantique et de la publication d’un nombre croissant d’ensembles de données selon les principes des Données Liées.\cite{LDOW}
+En soi, un réseau de données (données liées) est l'une des composantes d'un réseau La sémantique, c'est probablement l'application la plus connue. arrive parfois Certaines personnes ont confondu les deux, beaucoup ne sont pas d'accord sur ce point (Heath, 2009 ; Hendler, 2009). De plus, le W3C a cessé de se mettre à jour le 11 décembre 2013 Les pages de son site Internet sont dédiées au Web sémantique 2, indiquant aux visiteurs qu'il a Intrigué par une autre page dédiée à leur soi-disant W3C Data Activity 3. ll est Il est donc intéressant de souligner l'évolution du concept de Web sémantique, non seulement pour Il en va de même aux yeux des professionnels du domaine, et au sein des organisations qui l'encadrent. Le W3C indique également que les résultats de la mise en œuvre du Web sémantique indiquent que un certain succès mais qu’ils ne correspondaient pas à ce qui avait été envisagé au départ. En effet, le consortium s’attendait à ce que les activités de publication de pages Web et de données soient similaires.Cependant, on a vite découvert que la publication des données (date, nom, propriétés chimiques, emplacement, etc.) est considérée comme une activité exercée par un expert Domaine plutôt qu'une activité que tout le monde peut effectuer (W3C, 2013). Pour éviter toute confusion entre le Web sémantique et le Web de données, on peut Dire que la data world wide web fait partie des applications qui entrent dans la grande famille Web sémantique. Comme nous le verrons dans la section 2.7, les données structurées en interne C'est aussi l'une des applications du Web sémantique. Le réseau de données doit être pris en compte comme un ensemble de pratiques et de normes pour la publication de données structurées sur le web afin qu'ils puissent être reliés entre eux et interrogés.[Ivan Herman , Eric Prud'hommeaux , 2013 , Semantic Web Activity Lead ]
+2013-06-19
+En 2006, Tim Berners-Lee a publié la première ébauche d'un article sur le site Web du W3C intitulé Données liées. Jusqu'en 2010, cette page a été révisée plusieurs fois, ajoutant Lien open data 5 étoiles, nous reviendrons bientôt. Cette note est destinée à articuler certains aspects du réseau de données et passer en revue les objectifs derrière la mise en œuvre les éléments, le fait que les données sont partagées et que des connexions sont établies entre eux. établi
+Semantic Web Education and Outreach Interest Group (SWEO), maintenant fermé depuis 2008, il est donc possible d'assurer l'accessibilité du guide, permettant à ceux aimeraient mieux comprendre les outils à leur disposition afin de pouvoir publier leurs données sur le Web.(Phil Archer 2013 ,emantic Web Activity Lead]
+
+
+
 \section{Edition des données sémantiques}
+
+
+
 \section{CRDT (type de donnée répliqué commutatif)}
 C'est un type de données répliqué pour lequel certaines propriétés mathématiques simples garantissent une cohérence éventuelle. Dans l’État style, les états successifs d’un objet devraient former un semi-réseau monotone, avec fusionner le calcul d’une limite inférieure. Dans le style op-based, concurrent En supposant seulement que le sous-système de communication assure la livraison éventuelle (en ordre causal pour les objets basés sur les opérations), les CRDT sont garantie de converger vers un état commun et correct, sans nécessiter synchronisation. 
 L'idée principale est de trouver le type de données pour les déplacements naturels -
 lentement. Partant de ce principe, tout type de CRDT a été démontré dans 
 Convergence si toutes les opérations sont référencées par des identifiants uniques
 différent. Le défi se résume donc à concevoir des types de données et des techniques
-approprié pour assurer la commutativité des opérations.
+approprié pour assurer la commutativité des opérations.[Marc Shapiro and Nuno M. Preguiça. Designing a commutative replicated
+data type. CoRR, abs/0710.1784, 2007.]
 L'idée consiste à associer un identifiant unique à chaque emplacement
 Partagez des symboles, des lignes ou des atomes de document. Si l'opération d'insertion est
 Lorsqu'il est généré, l'identifiant unique est également associé au paramètre positionnel
