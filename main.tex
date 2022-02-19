@@ -34,11 +34,25 @@ Le Web sémantique n’est pas un Web séparé mais une extension du Web actuel,
 Le Web sémantique permettra aux machines de comprendre les documents et les données sémantiques, et non la parole humaine et les écrits.\cite{SEMANTCWEB}
 \section{RDF}
 RDF est un acronyme de Resource Description Framework. RDF est une norme W3C des technologies Web sémantiques et la base de l’architecture standardisée des technologies Web Sémantique. Le RDF est un langage simple pour exprimer des modèles de données sous forme d'objets « ressources » et de leurs relations.
+
 \section{LINKED DATA (DONNÉES LIÉES)}
 Le Web est de plus en plus considéré comme un espace d’information global constitué non seulement de documents liés, mais aussi de données liées. Plus qu’une simple vision, le Web of Data qui en résulte est né de la maturation de la pile de technologies du Web sémantique et de la publication d’un nombre croissant d’ensembles de données selon les principes des Données Liées.\cite{LDOW}
 \section{Edition des données sémantiques}
 \section{CRDT (type de donnée répliqué commutatif)}
-C'est un type de données répliqué pour lequel certaines propriétés mathématiques simples garantissent une cohérence éventuelle. Dans l’État style, les états successifs d’un objet devraient former un semi-réseau monotone, avec fusionner le calcul d’une limite inférieure. Dans le style op-based, concurrent En supposant seulement que le sous-système de communication assure la livraison éventuelle (en ordre causal pour les objets basés sur les opérations), les CRDT sont garantie de converger vers un état commun et correct, sans nécessiter synchronisation.
+C'est un type de données répliqué pour lequel certaines propriétés mathématiques simples garantissent une cohérence éventuelle. Dans l’État style, les états successifs d’un objet devraient former un semi-réseau monotone, avec fusionner le calcul d’une limite inférieure. Dans le style op-based, concurrent En supposant seulement que le sous-système de communication assure la livraison éventuelle (en ordre causal pour les objets basés sur les opérations), les CRDT sont garantie de converger vers un état commun et correct, sans nécessiter synchronisation. 
+L'idée principale est de trouver le type de données pour les déplacements naturels -
+lentement. Partant de ce principe, tout type de CRDT a été démontré dans 
+Convergence si toutes les opérations sont référencées par des identifiants uniques
+différent. Le défi se résume donc à concevoir des types de données et des techniques
+approprié pour assurer la commutativité des opérations.
+L'idée consiste à associer un identifiant unique à chaque emplacement
+Partagez des symboles, des lignes ou des atomes de document. Si l'opération d'insertion est
+Lorsqu'il est généré, l'identifiant unique est également associé au paramètre positionnel
+fonctionner. Les ID de travail ne changent pas, ils sont entièrement
+commande. Élément de document (caractère, symbole, ligne ou atome)
+S'affichent par ordre croissant par rapport à leurs identifiants.
+Cependant, la gestion des identifiants est un problème très sérieux car La précision de cette méthode repose sur l'unicité et la préservation de l'identifiant Un changement dans l'ordre général des opérations. Par conséquent, la plage de valeurs de l'identifiant doit être choisie pour être compacte. Ainsi, entre les deux identifiants Etant donné, il doit toujours être possible de créer un nouvel identifiant. 
+Parmi les algorithmes de CRDT existants, nous distinguons : OR-Set , C-SET ,SU-Set , B-SET, sr-CE et LD-SET Nous présentons ci-après chacun de ces algorithmes.
 \section{Les algorithmes d'édition de données sémantique}
 \subsection{OR-Set}
 OR-Set est conçu pour la mise à jour basée sur les éléments, il n’est pas adapté pour les opérations basées sur les modèles comme les opérations de mise à jour SPARQ  Afin de réduire la complexité de la communication, au lieu d’étiqueter chaque élément séparément Remarquez que dans le cas d’OR-Set, le nombre de tours serait égal à le nombre de triples exploités, car nous devons envoyer un message pour chaque un. Les triples en double n’affectent pas la complexité des tours, ils sont traités comme un insertion normale.
