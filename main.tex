@@ -34,11 +34,84 @@ Le Web sémantique n’est pas un Web séparé mais une extension du Web actuel,
 Le Web sémantique permettra aux machines de comprendre les documents et les données sémantiques, et non la parole humaine et les écrits.\cite{SEMANTCWEB}
 \section{RDF}
 RDF est un acronyme de Resource Description Framework. RDF est une norme W3C des technologies Web sémantiques et la base de l’architecture standardisée des technologies Web Sémantique. Le RDF est un langage simple pour exprimer des modèles de données sous forme d'objets « ressources » et de leurs relations.
-\section{LINKED DATA (DONNÉES LIÉES)}
-Le Web est de plus en plus considéré comme un espace d’information global constitué non seulement de documents liés, mais aussi de données liées. Plus qu’une simple vision, le Web of Data qui en résulte est né de la maturation de la pile de technologies du Web sémantique et de la publication d’un nombre croissant d’ensembles de données selon les principes des Données Liées.\cite{LDOW}
+Le RDF est un langage simple pour exprimer des
+modèles de données sous forme d'objets « ressources » et de leurs relations. Il sera utilisé pour annoter des documents écrits
+dans des langages non structurés, ou comme une interface pour des documents écrits dans des langages ayant une
+sémantique équivalente (des bases de données, par exemple).
+Un document RDF est un ensemble de triplets de la forme <sujet, prédicat, objet>. Les éléments de ces triplets peuvent être
+des URIs (Universal Resource Identifiers), des littéraux ou des variables. Cet ensemble de triplets peut être représenté de façon
+naturelle par un graphe (plus précisément un multi-graphe orienté étiqueté), où les éléments apparaissant comme sujet ou objet
+sont les sommets, et chaque triplet est représenté par un arc dont l’origine est son sujet et la destination son objet .\cite{SEMANTCWEB}
+RDF (Resource Description Framework), est un standard décrivant :
+\begin{itemize}
+ \item des ressources, une ressource pouvant être n'importe quoi (personnes, lieux, animaux, documents,
+concepts, etc.) ;
+\item la description de ces ressources par des attributs et des relations ;
+\item le framework contenant un modèle de données, des langages et des syntaxes.
+\end{itemize}
+\section{LINKED OPEN DATA (DONNÉES LIÉES)}
+Le Web est de plus en plus considéré comme un espace d’information global constitué non seulement de documents liés, mais aussi de données liées. Plus qu’une simple vision, le Web of Data qui en résulte est né de la maturation de la pile de technologies du Web sémantique et de la publication d’un nombre croissant d’ensembles de données selon les principes des Données Liées
+.\cite{LDOW}
+Linekd Open Data définit une vision des données liées et accessibles globalement sur l'internet, basée sur
+les normes RDF du web sémantique. LOD est souvent considéré comme un nuage de données virtuel où
+chacun peut accéder à toutes les données qu'il est autorisé à voir et peut également ajouter à toutes les
+données sans perturber la source de données originale. Cela fournit un environnement ouvert où les
+données peuvent être créées, connectées et consommées à l'échelle de l'internet. Une théorie de base de
+LOD est que les données ont plus de valeur si elles peuvent être connectées à d'autres données. Dans ce
+contexte, les données sont toute information structurée basée sur le web.
+Le LOD a été proposé comme base pour un gouvernement ouvert et pour résoudre de nombreux
+problèmes d'intégration de données
+\subsection{Avantages LOD:}
+En outre, la mise en relation des ensembles de données ouvertes favorise la créativité et l'innovation, car
+tous les développeurs, les citoyens et les entreprises peuvent utiliser tous ces ensembles de données pour
+mettre les choses en contexte et créer des connaissances et des applications.
+Certains des avantages des données ouvertes liées sont :
+\begin{itemize}
+ \item Utilisation efficace des ressources : Les données ouvertes liées réduisent la redondance en s'appuyant sur
+le travail des autres plutôt que de reproduire les systèmes existants.
+\item Amélioration de la qualité des informations : Les données ouvertes liées encouragent la normalisation des
+métadonnées et des formats de données, ce qui rend les données plus fiables et crédibles.
+\item Création de valeur ajoutée : En se connectant directement à d'autres données, les données ouvertes liées
+permettent aux utilisateurs de découvrir, d'utiliser et de réutiliser les informations de manière nouvelle et
+inattendue.
+\item Identification des lacunes dans les informations : Les données ouvertes liées permettent de mettre en
+évidence et de corriger les erreurs de données.
+\item Amélioration de la transparence : Les données ouvertes liées créent les moyens pour les citoyens et les
+groupes de défense de demander des comptes au secteur privé et aux gouvernements.
+\end{itemize}
+
 \section{Edition des données sémantiques}
 \section{CRDT (type de donnée répliqué commutatif)}
-C'est un type de données répliqué pour lequel certaines propriétés mathématiques simples garantissent une cohérence éventuelle. Dans l’État style, les états successifs d’un objet devraient former un semi-réseau monotone, avec fusionner le calcul d’une limite inférieure. Dans le style op-based, concurrent En supposant seulement que le sous-système de communication assure la livraison éventuelle (en ordre causal pour les objets basés sur les opérations), les CRDT sont garantie de converger vers un état commun et correct, sans nécessiter synchronisation.
+C'est un type de données répliqué pour lequel certaines propriétés mathématiques simples garantissent une cohérence
+éventuelle. Dans l’État style, les états successifs d’un objet devraient former un semi-réseau monotone, avec fusionner le calcul
+d’une limite inférieure. Dans le style op-based, concurrent En supposant seulement que le sous-système de communication
+assure la livraison éventuelle (en ordre causal pour les objets basés sur les opérations), les CRDT sont garantie de converger
+vers un état commun et correct, sans nécessiter synchronisation.
+L'idée principale est de trouver le type de données pour les déplacements naturels
+Partant de ce principe, tout type de CRDT a été démontré dans Convergence si toutes les opérations sont référencées par des
+identifiants uniques différent Le défi se résume donc à concevoir des types de données et des techniques approprié pour
+assurer la commutativité des opérations.
+\cite{CRDT}
+L'idée consiste à associer un identifiant unique à chaque emplacement partagez des symboles , des lignes ou des atomes des
+documents . Si l’operation est généré, l'identifiant unique est également associé au paramètre positionelle Cependant, la
+gestion des identifiants est un problème très sérieux car La précision de cette méthode repose sur l'unicité et la préservation de
+l'identifiant Un changement dans l'ordre général des opérations. Par conséquent, la plage de valeurs de l'identifiant doit être
+choisie pour être compacte. Ainsi, entre les deux identifiants Etant donné, il doit toujours être possible de créer un nouvel
+identifiant.
+Parmi les algorithmes de CRDT existants, nous distinguons : OR-Set , C-SET ,SU-Set , B-SET, sr-CE et LD-SET Nous
+présentons ci-après chacun de ces algorithmes.
+\begin{table}[h]
+\caption{Par exemple : Soit la phrase simple suivante : la tour Eiffel est créée en1887 a paris .
+Cette phrase est composée des parties suivantes}
+\label{table:crdt-example}
+\centering
+\begin{tabular}{|l|l|}
+\hline
+Sujet (ressource)    & Tour Eiffel  \\ \hline
+Prédicat (propriété) & Créée/située \\ \hline
+Objet (littéral)     & 1887/ Paris  \\ \hline
+\end{tabular}
+\end{table}
 \section{Les algorithmes d'édition de données sémantique}
 \subsection{OR-Set}
 OR-Set est conçu pour la mise à jour basée sur les éléments, il n’est pas adapté pour les opérations basées sur les modèles comme les opérations de mise à jour SPARQ  Afin de réduire la complexité de la communication, au lieu d’étiqueter chaque élément séparément Remarquez que dans le cas d’OR-Set, le nombre de tours serait égal à le nombre de triples exploités, car nous devons envoyer un message pour chaque un. Les triples en double n’affectent pas la complexité des tours, ils sont traités comme un insertion normale.
@@ -62,6 +135,8 @@ LD-Set est conforme à CRDT, il garantit la cohérence éventuelle dans tout les
 soutenir l’édition collaborative sociale de Données liées au sein d’une communauté virtuelle d’utilisateurs de différents sites, tout en maintenant une cohérence éventuelle afin de mise à jour simultanée
 \section{Etude comparative entre ces algorithmes}
 \section*{Conclusion}
+Dans ce chapitre, nous avons présenté quelques modèles d’édition collaboratifs basés sur l’approche des
+CRDT . ils ont énormément de problème dans les environnements distribués (pas encore finis).
 \addcontentsline{toc}{chapter}{Conclusion} \markboth{CONCLUSION}{}
 
 \bibliography{bibio} 
