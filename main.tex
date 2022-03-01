@@ -49,9 +49,35 @@ concepts, etc.) ;
 \item la description de ces ressources par des attributs et des relations ;
 \item le framework contenant un modèle de données, des langages et des syntaxes.
 \end{itemize}
-\section{LINKED OPEN DATA (DONNÉES LIÉES)}
+\section{RDFS}
+Le schéma RDFS donne véritablement sa sémantique à la description RDF\cite{RDFS}.il
+permet décrire ressources et propriétés dans un modèle objet: il existe des
+classes de ressources et des types de propriétés. Il est possible de définir des
+hiérarchies de classes et de propriétés dont l’applicabilité (i.e,domaine) et le
+domaine de valeurs(i.e,range)peuvent être contraintes.
+Il permet aussi de définir un vocabulaire pouvant être utilisé pour décrire des
+ressources.
+On peut imaginer à loisir de nombreux vocabulaires différents, adaptés chacun à
+un domaine ou à une application spécifique. Notons que les vocabulaires,
+appelés aussi schémas de description, sont eux-mêmes écrits en RDF, en
+utilisant des balises de l'espace de nom RDFS(e.g, rdfs:Class,
+rdfs:subClassOf,rdfs:domain, rdfs:range,...). la figure 1 présente un schéma de
+description écrits en RDF. Deux de vocabulaire sont définis pour ce schéma.
+\textbf{\#Personne}, \textbf{\#Chercheur}, \textbf{\#Doctorant} sont des classes de ressources d'un
+annuaire universitaire, \textbf{\#Chercheur} et \textbf{\#Doctorant} sont les sous classes de
+\textbf{\#Personne}. \textbf{\#nom} et {\#email} sont des propriétés applicables aux ressources de la
+classe \textbf{\#Personne} pour donner le nom et l'adresse email de chacune.
+\textbf{\#sousDirection} est une propriété d'association entre \textbf{\#Doctorant} et
+\textbf{\#Chercheur}.
+\begin{figure}[t]
+\centering
+\includegraphics[width=\textwidth]{rdfs_example.png}
+\caption{Un schéma de description défini en RDFS}
+\end{figure}
+\section{LINKED DATA (DONNÉES LIÉES)}
 Le Web est de plus en plus considéré comme un espace d’information global constitué non seulement de documents liés, mais aussi de données liées. Plus qu’une simple vision, le Web of Data qui en résulte est né de la maturation de la pile de technologies du Web sémantique et de la publication d’un nombre croissant d’ensembles de données selon les principes des Données Liées
-.\cite{LDOW}
+\cite{LDOW}.
+\subsection{LINKED OPEN DATA}
 Linekd Open Data définit une vision des données liées et accessibles globalement sur l'internet, basée sur
 les normes RDF du web sémantique. LOD est souvent considéré comme un nuage de données virtuel où
 chacun peut accéder à toutes les données qu'il est autorisé à voir et peut également ajouter à toutes les
@@ -61,7 +87,7 @@ LOD est que les données ont plus de valeur si elles peuvent être connectées �
 contexte, les données sont toute information structurée basée sur le web.
 Le LOD a été proposé comme base pour un gouvernement ouvert et pour résoudre de nombreux
 problèmes d'intégration de données
-\subsection{Avantages LOD:}
+\subsubsection{Avantages LOD:}
 En outre, la mise en relation des ensembles de données ouvertes favorise la créativité et l'innovation, car
 tous les développeurs, les citoyens et les entreprises peuvent utiliser tous ces ensembles de données pour
 mettre les choses en contexte et créer des connaissances et des applications.
